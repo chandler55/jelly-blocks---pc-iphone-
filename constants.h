@@ -1,0 +1,102 @@
+#pragma once
+
+// game modes
+#define TIMETRIAL 0
+#define LEVELSELECT 1
+#define GAMEPLAY 2
+#define LINECLEAR 3
+#define TRAINING 4
+#define TUTORIAL 5
+#define VSPLAYER 6
+#define TITLESCREEN 7
+#define ACHIEVEMENTS 8
+#define OPTIONS 9
+#define MULTIPLAYER 19
+#define SPLASH 30
+#define TIMETRIALMENU 10
+#define ENDLESSMENU 11
+#define VSCPUMENU 12
+#define LINECLEARMENU 13
+#define TRAININGMENU 14
+#define TUTORIALMENU 15
+#define VSPLAYERMENU 16
+#define TITLESCREENMENU 17
+#define ACHIEVEMENTSMENU 18
+#define MULTIPLAYERMENU 20
+#define ENDING 21
+#define TRANSITION 35
+
+#define PF_WIDTH 6
+#define PF_HEIGHT 48
+
+#define BLOCKSIZE 45
+
+// block behaviour
+#define BLOCK_DROP_TIMER 0
+#define BLOCK_FLASH_TIMER 40
+
+// defines that stop time! w00t!
+#define MAX_STOP_TIME 360
+#define BONUS_STOP_TIME 80
+#define PLAYER1 0
+#define CPUPLAYER 1
+#define PF_WIDTH 6
+#define PF_HEIGHT 48
+#define PF_STARTHEIGHT 6
+#define PF_VISIBLE_HEIGHT 10
+#define PF_STRESS_HEIGHT 9
+#define PF_FIRST_VISIBLE_ROW (PF_HEIGHT-PF_VISIBLE_HEIGHT-1)
+#define PF_FIRST_FILLED_ROW (PF_HEIGHT-PF_STARTHEIGHT)
+#define PF_FIRST_BLOCK_FIRST_VISIBLE_ROW (PF_FIRST_VISIBLE_ROW*PF_WIDTH)
+#define PF_FIRST_BLOCK_SECOND_VISIBLE_ROW ((PF_FIRST_VISIBLE_ROW+1)*PF_WIDTH)
+#define PF_FIRST_BLOCK_LAST_ROW ((PF_HEIGHT-1)*PF_WIDTH)
+#define PF_LAST_BLOCK_SECOND_LAST_ROW (PF_FIRST_BLOCK_LAST_ROW-1)
+#define PF_FIRST_BLOCK_SECOND_LAST_ROW ((PF_HEIGHT-2)*PF_WIDTH)
+#define PF_NUM_BLOCKS (PF_WIDTH*PF_HEIGHT)
+#define PF_MARKER_START (PF_NUM_BLOCKS-PF_WIDTH*6-(PF_WIDTH/2)-1)
+#define PF_GARBAGE_DROP_START (PF_FIRST_BLOCK_FIRST_VISIBLE_ROW-2*PF_WIDTH-1)
+// text tile number
+#define TILE_LARGE_SPACE 96
+#define TILE_LARGE_ZERO 97
+#define TILE_LARGE_COLON 107
+#define TILE_LARGE_TICK 108
+#define TILE_LARGE_DOUBLE_TICK 109
+#define TILE_LARGE_FULL_STOP 110
+#define LARGE_DIGIT_TILE_STRIDE 16
+// sprite/background priorities
+#define BACKGROUND_PRIORITY 3
+#define BLOCKS_PRIORITY 2
+#define CONSOLE_PRIORITY 0
+#define TEXT_PRIORITY 1
+#define MARKER_PRIORITY 0
+#define COMBO_COUNTER_PRIORITY 0
+#define COMBO_EGG_PRIORITY 1
+#define ASSERT(x) if(!(x)) {\
+	printf("assertion failed %s:%i\n", __FILE__, __LINE__);\
+	for(;;);\
+}
+#define DEBUGVERBOSE printf
+#define DEL(p) {if(p) {delete (p); (p)=NULL;}}
+
+#define DEBUGMONGO printf("%s\n", __PRETTY_FUNCTION__)
+
+#define COUNT_OF(array) sizeof(array)/sizeof(array[0])
+#define MAX_SCROLL_SPEED 2
+
+enum Direction
+{
+	DIR_UP,
+	DIR_DOWN,
+	DIR_LEFT,
+	DIR_RIGHT
+};
+
+enum Input2
+{
+	INPUT_UP,
+	INPUT_LEFT,
+	INPUT_RIGHT,
+	INPUT_DOWN,
+	INPUT_SWAP,
+	INPUT_RAISE
+};
